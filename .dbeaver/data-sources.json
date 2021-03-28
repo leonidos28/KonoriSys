@@ -1,0 +1,112 @@
+{
+	"folders": {},
+	"connections": {
+		"mysql8-177eea5cce5-5a5193101a032b72": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "etudiant",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "etudiant",
+				"url": "jdbc:mysql://localhost:3306/etudiant",
+				"home": "C:\\Program Files\\MySQL\\MySQL Router 8.0",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		},
+		"mysql8-177eeaf78b0-4dedd38671fa8ba8": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "konorisys",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "konorisys",
+				"url": "jdbc:mysql://localhost:3306/konorisys",
+				"home": "C:\\Program Files\\MySQL\\MySQL Router 8.0",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		},
+		"mysql8-177fc26f10f-1b104e6a4d1464f8": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "konorisys 2",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "konorisys",
+				"url": "jdbc:mysql://localhost:3306/konorisys",
+				"home": "C:\\Program Files\\MySQL\\MySQL Router 8.0",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		},
+		"mysql8-1781e787f8c-2659ca7f11cb8edc": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "etudiant 2",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "etudiant",
+				"url": "jdbc:mysql://localhost:3306/etudiant",
+				"home": "C:\\Program Files\\MySQL\\MySQL Router 8.0",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		},
+		"mysql8-178205fb4ce-2a19b3e39d1d1aea": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "etudiant 3",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "etudiant",
+				"url": "jdbc:mysql://localhost:3306/etudiant",
+				"home": "C:\\Program Files\\MySQL\\MySQL Router 8.0",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		},
+		"mysql8-17831c3c71b-24369dc4a5e14adb": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "semestres1",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "semestres1",
+				"url": "jdbc:mysql://localhost:3306/semestres1",
+				"home": "C:\\Program Files\\MySQL\\MySQL Router 8.0",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false
+		}
+	}
+}
