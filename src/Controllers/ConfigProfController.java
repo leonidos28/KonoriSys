@@ -70,6 +70,35 @@ public class ConfigProfController implements Initializable  {
 
 	}
 	@FXML
+	protected void emploiduTemp (ActionEvent e) throws Exception {
+		
+		
+		URL coodiantURL = getClass().getResource("/resource/fxml/Timetable.fxml");
+		Parent coodiantParent = FXMLLoader.load(coodiantURL);
+		Scene coodiantScene = new Scene(coodiantParent);
+		Stage cooStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		cooStage.setTitle("KonoriSys");
+		cooStage.setResizable(false);
+		cooStage.setScene(coodiantScene);
+		cooStage.show();
+		
+
+	}
+	@FXML
+	protected void listeEtudiant(ActionEvent e) throws Exception {
+		
+		URL profURL = getClass().getResource("/resource/fxml/listeEtudiant.fxml");
+		Parent profParent = FXMLLoader.load(profURL);
+		Scene profScene = new Scene(profParent);
+		Stage profStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		profStage.setTitle("KonoriSys");
+		profStage.setResizable(false);
+		profStage.setScene(profScene);
+		profStage.show();
+		
+
+	}
+	@FXML
 	protected void saisieNoteEcrit(ActionEvent e) throws Exception {
 		
 		

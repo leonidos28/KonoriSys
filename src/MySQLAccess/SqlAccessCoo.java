@@ -26,7 +26,7 @@ public String readDataBase(String id) throws Exception {
    
    // Setup the connection with the DB
    connect = DriverManager
-       .getConnection("jdbc:mysql://localhost/etudiant","root","MotdePasse");
+       .getConnection("jdbc:mysql://localhost/etudiant","root","Imad28082001");
 
    // Statements allow to issue SQL queries to the database
    statement = connect.createStatement();
