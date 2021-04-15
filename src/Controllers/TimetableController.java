@@ -1,5 +1,6 @@
 package Controllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -14,8 +15,13 @@ import com.calendarfx.view.CalendarView;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 public class TimetableController implements Initializable {
 
@@ -90,8 +96,17 @@ public class TimetableController implements Initializable {
     }
 
     @FXML
-    void Retour(ActionEvent event) {
-
+    void Retour(ActionEvent e) throws IOException {
+    	
+    	URL coodiantURL = getClass().getResource("/resource/fxml/ConfigProf.fxml");
+		Parent coodiantParent = FXMLLoader.load(coodiantURL);
+		Scene coodiantScene = new Scene(coodiantParent);
+		Stage cooStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		cooStage.setTitle("KonoriSys");
+		cooStage.setResizable(false);
+		cooStage.setScene(coodiantScene);
+		cooStage.show();
+		
     }
 
     @FXML
