@@ -1,13 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-13.0.2">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
 		<accessrules>
 			<accessrule kind="accessible" pattern="javafx/**"/>
 		</accessrules>
 	</classpathentry>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231/lib/ext/jfxrt.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="lib" path="mysql-connector-java-8.0.23.jar"/>
+	<classpathentry kind="lib" path="C:/Users/imad alaoui/Desktop/Projet Prog/jar_files/activation-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/imad alaoui/Desktop/Projet Prog/jar_files/commons-codec-1.11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/imad alaoui/Desktop/Projet Prog/jar_files/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/imad alaoui/Desktop/Projet Prog/jar_files/commons-lang3-3.8.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/imad alaoui/Desktop/Projet Prog/jar_files/controlsfx-11.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/imad alaoui/Desktop/Projet Prog/jar_files/ical4j-3.0.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/imad alaoui/Desktop/Projet Prog/jar_files/ikonli-core-11.3.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/imad alaoui/Desktop/Projet Prog/jar_files/ikonli-fontawesome-pack-11.3.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/imad alaoui/Desktop/Projet Prog/jar_files/ikonli-javafx-11.3.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/imad alaoui/Desktop/Projet Prog/jar_files/javafx-base-13.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/imad alaoui/Desktop/Projet Prog/jar_files/javafx-controls-13.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/imad alaoui/Desktop/Projet Prog/jar_files/javafx-graphics-13.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/imad alaoui/Desktop/Projet Prog/jar_files/javax.mail-1.6.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/imad alaoui/Desktop/Projet Prog/jar_files/slf4j-api-1.7.25.jar"/>
+	<classpathentry kind="lib" path="C:/Users/imad alaoui/Desktop/Projet Prog/jar_files/view-11.8.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/imad alaoui/Desktop/Projet Prog/jfoenix-9.0.10 (2).jar"/>
+	<classpathentry kind="lib" path="C:/Users/imad alaoui/Desktop/Projet Prog/calender gant jfx/lib/flexganttfx-core-11.12.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/imad alaoui/Desktop/Projet Prog/calender gant jfx/lib/flexganttfx-extras-11.12.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/imad alaoui/Desktop/Projet Prog/calender gant jfx/lib/flexganttfx-model-11.12.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/imad alaoui/Desktop/Projet Prog/calender gant jfx/lib/flexganttfx-view-11.12.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

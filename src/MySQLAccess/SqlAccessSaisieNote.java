@@ -19,7 +19,7 @@ public class SqlAccessSaisieNote {
 		try {
 			String user = null;
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			connect = DriverManager.getConnection("jdbc:mysql://localhost/etudiant", "root", "MotdePasse");	
+			connect = DriverManager.getConnection("jdbc:mysql://localhost/etudiant", "root", "Imad28082001");	
 			statement = connect.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, 
                     ResultSet.CONCUR_UPDATABLE);
 			resultSet = statement.executeQuery("SELECT * from etudiant ;");
@@ -59,7 +59,7 @@ public class SqlAccessSaisieNote {
 
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			connect = DriverManager.getConnection("jdbc:mysql://localhost/etudiant", "root",
-					"MotdePasse");
+					"Imad28082001");
 			statement = connect.createStatement();
 			
 			result = statement.executeUpdate("UPDATE note SET note"+exam+" = '"
@@ -79,7 +79,7 @@ public class SqlAccessSaisieNote {
 			 
 		   Class.forName("com.mysql.cj.jdbc.Driver");
 		   connect = DriverManager
-		       .getConnection("jdbc:mysql://localhost/etudiant","root","MotdePasse");
+		       .getConnection("jdbc:mysql://localhost/etudiant","root","Imad28082001");
 		   statement = connect.createStatement();
 		  
 		   result = statement
@@ -102,7 +102,7 @@ public class SqlAccessSaisieNote {
 		   
 		   // Setup the connection with the DB
 		   connect = DriverManager
-		       .getConnection("jdbc:mysql://localhost/etudiant","root","MotdePasse");
+		       .getConnection("jdbc:mysql://localhost/etudiant","root","Imad28082001");
 
 		   // Statements allow to issue SQL queries to the database
 		   statement = connect.createStatement();

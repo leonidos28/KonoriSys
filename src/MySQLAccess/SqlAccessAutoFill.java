@@ -27,7 +27,7 @@ public static void readDataBasePK() throws Exception {
    
    // Setup the connection with the DB
    connect = DriverManager
-       .getConnection("jdbc:mysql://localhost/etudiant","root","MotdePasse");
+       .getConnection("jdbc:mysql://localhost/etudiant","root","Imad28082001");
 
    // Statements allow to issue SQL queries to the database
    statement = connect.createStatement();
@@ -58,7 +58,7 @@ public static void SavetoDataBaseFill(String id) throws Exception {
 		 
 	   Class.forName("com.mysql.cj.jdbc.Driver");
 	   connect = DriverManager
-	       .getConnection("jdbc:mysql://localhost/etudiant","root","MotdePasse");
+	       .getConnection("jdbc:mysql://localhost/etudiant","root","Imad28082001");
 	   statement = connect.createStatement();
 	   result = statement
 	       .executeUpdate("INSERT into note (idEtudiant) values ('"+id+"') ; ");

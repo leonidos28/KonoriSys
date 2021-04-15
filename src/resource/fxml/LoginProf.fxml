@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -18,16 +18,6 @@
 		</ImageView>
 		<AnchorPane layoutX="700.0" layoutY="90.0" prefHeight="541.0" prefWidth="516.0" style="-fx-background-color: #9C2B27; -fx-background-radius: 20;" stylesheets="@../css/Main.css">
 			<children>
-				<Button layoutX="114.0" layoutY="387.0" mnemonicParsing="false" onAction="#Connexion" prefHeight="48.0" prefWidth="288.0" style="-fx-background-color: #8C0000;" text="Connexion" textFill="WHITE">
-					<font>
-						<Font name="Yu Gothic UI Semibold" size="24.0" />
-					</font>
-				</Button>
-				<Button id="mdpOubliee" layoutX="44.0" layoutY="447.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="428.0" style="-fx-background-color: #9b2B27;" text="Mdp oublié?" textFill="WHITE">
-					<font>
-						<Font name="Trebuchet MS" size="20.0" />
-					</font>
-				</Button>
 				<Label id="login" alignment="CENTER" contentDisplay="TOP" layoutX="44.0" layoutY="39.0" prefHeight="70.0" prefWidth="428.0" stylesheets="@../css/Main.css" text="Login" textFill="WHITE">
 					<font>
 						<Font name="Tw Cen MT" size="53.0" />
@@ -48,6 +38,16 @@
 						<Font size="19.0" />
 					</font>
 				</Label>
+            <JFXButton layoutX="166.0" layoutY="381.0" onAction="#Connexion" prefHeight="51.0" prefWidth="184.0" style="-fx-background-color: #8C0000;" text="Connexion" textFill="WHITE">
+               <font>
+                  <Font name="Yu Gothic UI Semibold" size="24.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="191.0" layoutY="446.0" text="Mdp oublié?" textFill="WHITE">
+               <font>
+                  <Font name="Trebuchet MS" size="20.0" />
+               </font>
+            </JFXButton>
 			</children>
 		</AnchorPane>
 		<Label id="title" layoutX="26.0" layoutY="14.0" prefHeight="21.0" prefWidth="419.0" text="Espace Professeur" textFill="WHITE">
@@ -55,10 +55,10 @@
 				<Font name="Tw Cen MT Condensed" size="60.0" />
 			</font>
 		</Label>
-		<Button layoutX="14.0" layoutY="90.0" mnemonicParsing="false" onAction="#Retour" prefHeight="53.0" prefWidth="158.0" style="-fx-background-color: #20120F;" text="&lt; Retour" textFill="WHITE">
-			<font>
-				<Font name="Tw Cen MT" size="30.0" />
-			</font>
-		</Button>
+      <JFXButton layoutX="26.0" layoutY="102.0" onAction="#Retour" text="&lt; Retour" textFill="WHITE">
+         <font>
+            <Font name="Tw Cen MT" size="30.0" />
+         </font>
+      </JFXButton>
 	</children>
 </AnchorPane>

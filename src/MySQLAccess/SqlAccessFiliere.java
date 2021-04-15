@@ -23,7 +23,7 @@ public class SqlAccessFiliere {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
 			// Setup the connection with the DB
-			connect = DriverManager.getConnection("jdbc:mysql://localhost/etudiant", "root", "MotdePasse");
+			connect = DriverManager.getConnection("jdbc:mysql://localhost/etudiant", "root", "Imad28082001");
 
 			// Statements allow to issue SQL queries to the database
 			statement = connect.createStatement();
@@ -57,7 +57,7 @@ public class SqlAccessFiliere {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
 			// Setup the connection with the DB
-			connect = DriverManager.getConnection("jdbc:mysql://localhost/etudiant", "root", "MotdePasse");
+			connect = DriverManager.getConnection("jdbc:mysql://localhost/etudiant", "root", "Imad28082001");
 
 			// Statements allow to issue SQL queries to the database
 			statement = connect.createStatement();
@@ -89,7 +89,7 @@ public class SqlAccessFiliere {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
 			// Setup the connection with the DB
-			connect = DriverManager.getConnection("jdbc:mysql://localhost/etudiant", "root", "MotdePasse");
+			connect = DriverManager.getConnection("jdbc:mysql://localhost/etudiant", "root", "Imad28082001");
 
 			// Statements allow to issue SQL queries to the database
 			statement = connect.createStatement();
@@ -122,7 +122,7 @@ public class SqlAccessFiliere {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
 			// Setup the connection with the DB
-			connect = DriverManager.getConnection("jdbc:mysql://localhost/etudiant", "root", "MotdePasse");
+			connect = DriverManager.getConnection("jdbc:mysql://localhost/etudiant", "root", "Imad28082001");
 
 			// Statements allow to issue SQL queries to the database
 			statement = connect.createStatement();
