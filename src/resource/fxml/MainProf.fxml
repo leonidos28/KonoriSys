@@ -82,7 +82,7 @@
             <ChoiceBox fx:id="choixMatiereBox" prefHeight="35.0" prefWidth="185.0" style="-fx-background-color: #fff; -fx-border-color: #9C2B27; -fx-border-width: 2; -fx-border-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
-      <Label fx:id="moduleLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="495.0" layoutY="360.0" prefHeight="34.0" prefWidth="541.0" textFill="#9c2b27">
+      <Label fx:id="moduleLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="495.0" layoutY="370.0" prefHeight="34.0" prefWidth="541.0" textFill="#9c2b27">
          <font>
             <Font name="Tw Cen MT" size="23.0" />
          </font>

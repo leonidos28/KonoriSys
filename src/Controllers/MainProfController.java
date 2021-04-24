@@ -40,6 +40,63 @@ public class MainProfController implements Initializable {
 	@FXML
 	private Label moduleLabel;
 
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+
+		choixFiliereBox.getItems().add(0, "-Filiere-");
+		choixFiliereBox.getSelectionModel().select(0);
+
+		fillChoiceBox(loadDataOb("idfiliere"), choixFiliereBox);
+		
+		choixFiliereBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+			@Override
+			public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
+				
+				fillChoiceBox(dependData("idsemestre","idfiliere", "f", choixFiliereBox.getValue()), choixSemestreBox);
+				choixSemestreBox.getItems().add(0, "-Semsetre-");
+				choixSemestreBox.getSelectionModel().select(0);}
+		});
+		
+		choixSemestreBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+			@Override
+			public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
+				
+				fillChoiceBox(dependData("idModule","idsemestre", "s", choixSemestreBox.getValue()), choixModuleBox); 
+				choixModuleBox.getItems().add(0, "-Module-");
+				choixModuleBox.getSelectionModel().select(0);}
+		});
+		
+		choixModuleBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+			@Override
+			public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
+
+				fillChoiceBox(dependData("idmatiere","idModule", "mo", choixModuleBox.getValue()), choixMatiereBox); 
+				choixMatiereBox.getItems().add(0, "-Matiere-");
+				choixMatiereBox.getSelectionModel().select(0);}
+		});
+		
+
+		
+		choixModuleBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+
+			@Override
+			public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
+				try {
+					String value = SqlAccessFiliere.readDataBase(choixSemestreBox.getValue(),
+							choixFiliereBox.getValue(), "nomModule", choixModuleBox.getValue()).toString();
+
+					changelabel(value);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+			}
+
+		});
+
+	}
+
 	@FXML
 	protected void Retour(ActionEvent e) throws Exception {
 
@@ -60,6 +117,7 @@ public class MainProfController implements Initializable {
 		if (!choixMatiereBox.getSelectionModel().isEmpty()) {
 
 			String semestre = choixSemestreBox.getSelectionModel().getSelectedItem();
+			
 			String filere = choixFiliereBox.getSelectionModel().getSelectedItem();
 			String module = choixModuleBox.getSelectionModel().getSelectedItem();
 			String matiere = choixMatiereBox.getSelectionModel().getSelectedItem();
@@ -83,112 +141,8 @@ public class MainProfController implements Initializable {
 
 	}
 
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-
-		choixFiliereBox.getItems().add(0, "-Filiere-");
-		choixFiliereBox.getSelectionModel().select(0);
-
-		choixSemestreBox.getItems().add(0, "-Semsetre-");
-		choixSemestreBox.getSelectionModel().select(0);
-
-		fillChoiceBox(loadDataOb("filiere"), choixFiliereBox);
-		fillChoiceBox(loadDataOb("semestre"), choixSemestreBox);
-
-		choixSemestreBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-
-			@Override
-			public void changed(ObservableValue<? extends String> selected, String fil, String module) {
-				// TODO Auto-generated method stub
-				System.out.println("choiceSemestrebox changed");
-
-				fillChoiceBox(loadDataModule(), choixModuleBox);
-
-			}
-		});
-
-		choixModuleBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-
-			@Override
-			public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
-
-				fillChoiceBox(loadDataMatiere(4), choixMatiereBox);
-
-			}
-
-		});
-
-		choixModuleBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-
-			@Override
-			public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
-				try {
-					String value = SqlAccessFiliere.readDataBase(choixSemestreBox.getValue(),
-							choixFiliereBox.getValue(), "nomModule", choixModuleBox.getValue()).toString();
-
-					changelabel(value);
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
-			}
-
-		});
-
-	}
-
 	public void changelabel(String value) {
 		moduleLabel.setText(value);
-	}
-
-	public ArrayList<String> loadDataModule() {
-
-		SqlAccessFiliere access = new SqlAccessFiliere();
-		try {
-
-			listModule = access.readDataBaseModule(choixSemestreBox.getValue(), choixFiliereBox.getValue());
-
-		} catch (Exception e) {
-
-			e.printStackTrace();
-		}
-
-		return listModule;
-	}
-
-	public ArrayList<String> loadDataMatiere(int id) {
-		ArrayList<String> list = new ArrayList<String>();
-		SqlAccessFiliere access = new SqlAccessFiliere();
-		try {
-			
-
-				list.addAll(access.readDataBaseList(choixSemestreBox.getValue(), choixFiliereBox.getValue(),
-						"idMatiere", choixModuleBox.getValue()));
-
-			
-
-		} catch (Exception e) {
-
-			e.printStackTrace();
-		}
-
-		return list;
-	}
-
-	public ArrayList<String> loadData(String id) {
-		ArrayList<String> list = new ArrayList<String>();
-		SqlAccessFiliere access = new SqlAccessFiliere();
-		try {
-
-			list = access.readDataBaseList(id);
-
-		} catch (Exception e) {
-
-			e.printStackTrace();
-		}
-
-		return list;
 	}
 
 	public ObservableList<String> loadDataOb(String id) {
@@ -205,15 +159,30 @@ public class MainProfController implements Initializable {
 		ObservableList<String> obList = FXCollections.observableArrayList(list);
 		return obList;
 	}
+	
+	public ObservableList<String> dependData(String id,String what,String table,String value) {
+		ArrayList<String> list = new ArrayList<String>();
+		SqlAccessFiliere access = new SqlAccessFiliere();
+		try {
+
+			list = access.DataBaseDependencies(id, what, table, value);
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+		ObservableList<String> obList = FXCollections.observableArrayList(list);
+		return obList;
+	}
+	
 
 	private void fillChoiceBox(ObservableList<String> list, ChoiceBox<String> choiceBox) {
+		if (choiceBox.getValue() != "-Filiere-") {
+			choiceBox.getItems().clear();
+		}
 		
 		choiceBox.getItems().addAll(list);
-	}
-
-	private void fillChoiceBox(ArrayList<String> list, ChoiceBox<String> choiceBox) {
-		choiceBox.getItems().clear();
-		choiceBox.getItems().addAll(list);
+		
 	}
 
 }

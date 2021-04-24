@@ -14,7 +14,9 @@ import javafx.stage.Stage;
 import source.Professeur;
 
 public class LoginProfController {
-
+	
+	public static String idprof = "";
+	
 	@FXML
 	private Label status;
 	@FXML
@@ -29,6 +31,7 @@ public class LoginProfController {
 		System.out.println(professeur.getidmdpProf(identifiant.getText()));
 
 		if (mdp.getText().equals(professeur.getidmdpProf(identifiant.getText()))) {
+			idprof = identifiant.getText() ;
 			URL profURL = getClass().getResource("/resource/fxml/MainProf.fxml");
 			Parent profParent = FXMLLoader.load(profURL);
 			Scene profScene = new Scene(profParent);
@@ -38,6 +41,7 @@ public class LoginProfController {
 			etuStage.setScene(profScene);
 			etuStage.show();
 		} else {
+			idprof = "";
 			status.setText("Mdp ou identifiant Incorrect ");
 		}
 
