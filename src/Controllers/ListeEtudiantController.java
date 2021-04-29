@@ -100,10 +100,13 @@ public class ListeEtudiantController implements Initializable {
     
 
     private ObservableList<StudentsModel> studentsModels = FXCollections.observableArrayList(
+    		
             new StudentsModel(1,"Imadeddine", "Alaoui Ismaili"),
             new StudentsModel(2,"Othmane", "Benchkroun"),
             new StudentsModel(3,"Othmane", "Zaim"),
             new StudentsModel(8,"Louchkou", "Hamid")
+            
+            
             
     );
     
