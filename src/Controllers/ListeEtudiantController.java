@@ -105,8 +105,8 @@ public class ListeEtudiantController implements Initializable {
             new StudentsModel(2,"Othmane", "Benchkroun"),
             new StudentsModel(3,"Othmane", "Zaim"),
             new StudentsModel(8,"Louchkou", "Hamid")
-            
-            
+    
+
             
     );
     

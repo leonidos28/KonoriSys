@@ -27,7 +27,12 @@ public class SqlAccessNote {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			connect = DriverManager.getConnection("jdbc:mysql://localhost/etudiant", "root", "12345678");
 			statement = connect.createStatement();			
-			resultSet = statement.executeQuery("select * from etudiant;");
+
+			resultSet = statement.executeQuery("Select * "
+					+ "from matiere as ma ,module as mo ,professeur as p, prof_to_matiere as ptm,semestre as s,filiere as f "
+					+ "where p.idprofesseur = ptm.idprof and ma.idmatiere = ptm.idmatiere and ma.module = mo.idModule and s.idSemestre = mo.semestre "
+					+ "and f.idfiliere =mo.filiere and p.idprofesseur ='"+ LoginProfController.idprof +"'; ;");
+
 			ArrayList<String> listFil = new ArrayList<String>();
 			while (resultSet.next()) {
 				user = resultSet.getString(id);
