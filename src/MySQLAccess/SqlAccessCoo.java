@@ -26,14 +26,14 @@ public String readDataBase(String id) throws Exception {
    
    // Setup the connection with the DB
    connect = DriverManager
-       .getConnection("jdbc:mysql://localhost/etudiant","root","Imad28082001");
+       .getConnection("jdbc:mysql://localhost/etudiant","root","12345678");
 
    // Statements allow to issue SQL queries to the database
    statement = connect.createStatement();
-   String query = id;
+   
    // Result set get the result of the SQL query
    resultSet = statement
-       .executeQuery("select * from coordinateur where id ='" + query +"' ;");
+       .executeQuery("select * from coordinateur where idcoordinateur ='" + id +"' ;");
    
    while (resultSet.next()) {
 		 user = resultSet.getString("mdp");

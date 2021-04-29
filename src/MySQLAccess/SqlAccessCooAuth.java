@@ -12,9 +12,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import Controllers.LoginCooController;
 import Controllers.LoginProfController;
 
-public class SqlAccessFiliere {
+public class SqlAccessCooAuth {
 
 	public static Connection connect = null;
 	public static Statement statement = null;
@@ -27,15 +28,11 @@ public class SqlAccessFiliere {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			connect = DriverManager.getConnection("jdbc:mysql://localhost/etudiant", "root", "12345678");
 			statement = connect.createStatement();			
-			resultSet = statement.executeQuery("Select * "
-					+ "from matiere as ma ,module as mo ,professeur as p, prof_to_matiere as ptm,semestre as s,filiere as f "
-					+ "where p.idprofesseur = ptm.idprof and ma.idmatiere = ptm.idmatiere and ma.module = mo.idModule and s.idSemestre = mo.semestre "
-					+ "and f.idfiliere =mo.filiere and p.idprofesseur ='"+ LoginProfController.idprof +"'; ;");
+			resultSet = statement.executeQuery("Select * from coordinateur as c where c.idcoordinateur  = '"+ LoginCooController.idcoo +"';");
 			ArrayList<String> listFil = new ArrayList<String>();
 			while (resultSet.next()) {
 				user = resultSet.getString(id);
 				listFil.add(user);		
-				System.out.println(user);
 			}			
 			Set<String> set = new HashSet<>(listFil);
 			listFil.clear();
@@ -51,17 +48,14 @@ public class SqlAccessFiliere {
 
 	}
 	
-	public ArrayList<String> DataBaseDependencies(String id,String what,String table,String value) throws Exception {
+	public ArrayList<String> DataBaseDependencies(String id) throws Exception {
 		try {
 			String user = null;
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			connect = DriverManager.getConnection("jdbc:mysql://localhost/etudiant", "root", "12345678");
 			statement = connect.createStatement();			
-			resultSet = statement.executeQuery("Select * "
-					+ "from matiere as ma ,module as mo ,professeur as p, prof_to_matiere as ptm,semestre as s,filiere as f "
-					+ "where p.idprofesseur = ptm.idprof and ma.idmatiere = ptm.idmatiere and ma.module = mo.idModule and s.idSemestre = mo.semestre "
-					+ "and f.idfiliere =mo.filiere and p.idprofesseur ='"+ LoginProfController.idprof +"' and"
-							+ " "+table+"."+what+" = '"+value+"' ; ");
+			resultSet = statement.executeQuery("Select * from semestre as s ;");
+					
 			ArrayList<String> listFil = new ArrayList<String>();
 			while (resultSet.next()) {
 				user = resultSet.getString(id);
@@ -113,8 +107,6 @@ public class SqlAccessFiliere {
 		}
 
 	}
-	
-	
 
 
 

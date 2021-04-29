@@ -14,7 +14,7 @@ import java.util.Set;
 
 import Controllers.LoginProfController;
 
-public class SqlAccessFiliere {
+public class SqlAccessNote {
 
 	public static Connection connect = null;
 	public static Statement statement = null;

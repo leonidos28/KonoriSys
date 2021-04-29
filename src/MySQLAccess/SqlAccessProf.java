@@ -26,7 +26,7 @@ public String readDataBase(String id) throws Exception {
    
    // Setup the connection with the DB
    connect = DriverManager
-       .getConnection("jdbc:mysql://localhost/etudiant","root","Imad28082001");
+       .getConnection("jdbc:mysql://localhost/etudiant","root","12345678");
 
    // Statements allow to issue SQL queries to the database
    statement = connect.createStatement();
@@ -56,7 +56,7 @@ public  void SavetoDataBaseIDMatiere(String idColumn,String value,String idRow,S
 
 	   Class.forName("com.mysql.cj.jdbc.Driver");
 	   connect = DriverManager
-	       .getConnection("jdbc:mysql://localhost/etudiant","root","Imad28082001");
+	       .getConnection("jdbc:mysql://localhost/etudiant","root","12345678");
 	   statement = connect.createStatement();
 	   result = statement
 	       .executeUpdate("UPDATE matiere SET "+idColumn+" = '"+value+"' where idMatiere = '"+idRow+"' ; ");
