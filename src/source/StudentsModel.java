@@ -1,14 +1,28 @@
 package source;
 
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 public class StudentsModel {
 
     private SimpleIntegerProperty studentId;
     private SimpleStringProperty firstName;
     private SimpleStringProperty lastName;
+    
+    private final StringProperty  name   = new SimpleStringProperty();
+    private final BooleanProperty delete = new SimpleBooleanProperty();
+
+    public StudentsModel( String nm, boolean del ) {
+       name  .set( nm  );
+       delete.set( del );
+    }
+
+    public StringProperty  nameProperty  () { return name;   }
+    public BooleanProperty deleteProperty() { return delete; }
 
     public StudentsModel(Integer studentId, String firstName, String lastName) {
         this.studentId = new SimpleIntegerProperty(studentId);

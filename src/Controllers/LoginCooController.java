@@ -17,7 +17,9 @@ import javafx.stage.Stage;
 import source.Coordinateur;
 
 public class LoginCooController {
-
+	
+	public static String idcoo = "";
+	
 	@FXML
 	private Label status;
 	@FXML
@@ -32,7 +34,8 @@ public class LoginCooController {
 		System.out.println(coordinateur.getidmdpCoo(identifiant.getText()));
 
 		if (mdp.getText().equals(coordinateur.getidmdpCoo(identifiant.getText()))) {
-			URL coordinateurURL = getClass().getResource("/resource/fxml/MainCoo.fxml");
+			idcoo = identifiant.getText() ;
+			URL coordinateurURL = getClass().getResource("/resource/fxml/ConfigCoo.fxml");
 			Parent coordinateurParent = FXMLLoader.load(coordinateurURL);
 			Scene coordinateurScene = new Scene(coordinateurParent);
 			Stage etuStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -41,6 +44,7 @@ public class LoginCooController {
 			etuStage.setScene(coordinateurScene);
 			etuStage.show();
 		} else {
+			idcoo = "";
 			status.setText("Mdp ou identifiant Incorrect ");
 		}
 

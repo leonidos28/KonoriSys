@@ -20,6 +20,7 @@
       </ImageView>
       <TableView fx:id="tbData" layoutX="334.0" layoutY="173.0" prefHeight="442.0" prefWidth="914.0" style="-fx-border-color: #9C2B27;" stylesheets="@../css/fullpackstyling.css">
         <columns>
+            <TableColumn fx:id="loadedColumn" maxWidth="4000.0" minWidth="-1.0" prefWidth="97.0" resizable="false" text="Absence" />
           <TableColumn fx:id="studentId" minWidth="0.0" prefWidth="104.0" resizable="false" text="StudentId" />
           <TableColumn fx:id="firstName" prefWidth="202.0" text="Nom" />
             <TableColumn fx:id="lastName" prefWidth="125.0" text="Prenom" />

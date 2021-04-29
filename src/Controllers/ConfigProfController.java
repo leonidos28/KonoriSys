@@ -98,6 +98,21 @@ public class ConfigProfController implements Initializable  {
 		
 
 	}
+	
+	@FXML
+	protected void abscence(ActionEvent e) throws Exception {
+		
+		URL profURL = getClass().getResource("/resource/fxml/Abscence.fxml");
+		Parent profParent = FXMLLoader.load(profURL);
+		Scene profScene = new Scene(profParent);
+		Stage profStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		profStage.setTitle("KonoriSys");
+		profStage.setResizable(false);
+		profStage.setScene(profScene);
+		profStage.show();
+		
+
+	}
 	@FXML
 	protected void saisieNoteEcrit(ActionEvent e) throws Exception {
 		

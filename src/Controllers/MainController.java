@@ -51,7 +51,7 @@ public class MainController implements Initializable {
 	protected void skip(ActionEvent e) throws Exception {
 		
 		
-		URL profURL = getClass().getResource("/resource/fxml/Timetable.fxml");
+		URL profURL = getClass().getResource("/resource/fxml/ListeEtudiant.fxml");
 		Parent profParent = FXMLLoader.load(profURL);
 		Scene profScene = new Scene(profParent);
 		Stage profStage = (Stage) ((Node) e.getSource()).getScene().getWindow();

@@ -57,6 +57,11 @@
                   <Font name="Tw Cen MT" size="23.0" />
                </font>
             </Button>
+            <Button layoutX="52.0" layoutY="441.0" mnemonicParsing="false" onAction="#abscence" prefHeight="45.0" prefWidth="245.0" style="-fx-background-color: #9C2B27; -fx-border-color: #fff; -fx-border-radius: 5;" text="Abscence" textFill="WHITE">
+               <font>
+                  <Font name="Tw Cen MT" size="23.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
       <Label layoutX="346.0" layoutY="36.0" text="Configuration de la Matière" textFill="#9c2b27">

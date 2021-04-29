@@ -25,7 +25,10 @@ public class SqlAccessFiliere {
 		try {
 			String user = null;
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			connect = DriverManager.getConnection("jdbc:mysql://localhost/etudiant", "root", "Imad28082001");
+
+
+			connect = DriverManager.getConnection("jdbc:mysql://localhost/etudiant", "root", "12345678");
+
 			statement = connect.createStatement();			
 			resultSet = statement.executeQuery("Select * "
 					+ "from matiere as ma ,module as mo ,professeur as p, prof_to_matiere as ptm,semestre as s,filiere as f "
@@ -55,7 +58,9 @@ public class SqlAccessFiliere {
 		try {
 			String user = null;
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			connect = DriverManager.getConnection("jdbc:mysql://localhost/etudiant", "root", "Imad28082001");
+
+			connect = DriverManager.getConnection("jdbc:mysql://localhost/etudiant", "root", "12345678");
+
 			statement = connect.createStatement();			
 			resultSet = statement.executeQuery("Select * "
 					+ "from matiere as ma ,module as mo ,professeur as p, prof_to_matiere as ptm,semestre as s,filiere as f "
@@ -89,7 +94,7 @@ public class SqlAccessFiliere {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
 			// Setup the connection with the DB
-			connect = DriverManager.getConnection("jdbc:mysql://localhost/etudiant", "root", "Imad28082001");
+			connect = DriverManager.getConnection("jdbc:mysql://localhost/etudiant", "root", "12345678");
 
 			// Statements allow to issue SQL queries to the database
 			statement = connect.createStatement();
@@ -113,6 +118,8 @@ public class SqlAccessFiliere {
 		}
 
 	}
+	
+	
 
 
 
