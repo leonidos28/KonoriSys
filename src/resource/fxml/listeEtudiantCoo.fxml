@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ListeEtudiantController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ListeEtudiantControllerCoo">
    <children>
       <ImageView fitHeight="656.0" fitWidth="1250.0" layoutX="50.0" layoutY="213.0" opacity="0.12" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -68,11 +68,16 @@
             </Button>
          </children>
       </AnchorPane>
-      <Label layoutX="338.0" layoutY="32.0" text="Liste Etudiants" textFill="#9c2b27">
+      <Label layoutX="338.0" layoutY="32.0" text="Liste Etudiants-Coo" textFill="#9c2b27">
          <font>
             <Font name="Tw Cen MT Condensed Extra Bold" size="36.0" />
          </font>
       </Label>
       <Line endX="813.0" layoutX="422.0" layoutY="73.0" startX="-100.0" style="-fx-fill: #9C2B27;" />
+      <Button layoutX="1173.0" layoutY="101.0" mnemonicParsing="false" onAction="#addStudent" prefHeight="33.0" prefWidth="63.0" style="-fx-background-color: #9C2B27; -fx-border-color: #fff; -fx-border-radius: 5;" text="+" textFill="WHITE">
+         <font>
+            <Font name="Tw Cen MT" size="23.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

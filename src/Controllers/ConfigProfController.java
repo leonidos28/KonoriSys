@@ -42,7 +42,7 @@ public class ConfigProfController implements Initializable  {
 	protected void Retour(ActionEvent e) throws Exception {
 		
 		
-		URL coodiantURL = getClass().getResource("/resource/fxml/ConfigProf.fxml");
+		URL coodiantURL = getClass().getResource("/resource/fxml/Main.fxml");
 		Parent coodiantParent = FXMLLoader.load(coodiantURL);
 		Scene coodiantScene = new Scene(coodiantParent);
 		Stage cooStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -87,7 +87,7 @@ public class ConfigProfController implements Initializable  {
 	@FXML
 	protected void listeEtudiant(ActionEvent e) throws Exception {
 		
-		URL profURL = getClass().getResource("/resource/fxml/listeEtudiant.fxml");
+		URL profURL = getClass().getResource("/resource/fxml/listeEtudiantProf.fxml");
 		Parent profParent = FXMLLoader.load(profURL);
 		Scene profScene = new Scene(profParent);
 		Stage profStage = (Stage) ((Node) e.getSource()).getScene().getWindow();

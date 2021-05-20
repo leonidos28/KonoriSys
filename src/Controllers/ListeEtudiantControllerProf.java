@@ -11,7 +11,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
@@ -24,7 +23,9 @@ import java.net.URL;
 import java.util.HashSet;
 import java.util.ResourceBundle;
 
-public class AbscenceController implements Initializable {
+public class ListeEtudiantControllerProf implements Initializable {
+	
+	int studentid = 0;
 
     @FXML
     private TableView<StudentsModel> tbData;
@@ -40,10 +41,8 @@ public class AbscenceController implements Initializable {
     @FXML
     public TableColumn<StudentsModel, Boolean> loadedColumn ;
     
-    @FXML
-	private Label status;
 
-    public AbscenceController()
+    public ListeEtudiantControllerProf()
     {
 
     }
@@ -56,27 +55,14 @@ public class AbscenceController implements Initializable {
 	    
     	
 	    
-	    loadedColumn.setCellValueFactory( new PropertyValueFactory<>( "delete" ));
-	    loadedColumn.setCellFactory( tc -> new CheckBoxTableCell<>());
+	    
 	    
         studentId.setCellValueFactory(new PropertyValueFactory<>("StudentId"));
         firstName.setCellValueFactory(new PropertyValueFactory<>("LastName"));
         lastName.setCellValueFactory(new PropertyValueFactory<>("FirstName"));
         tbData.setItems(studentsModels);
         
-        final var delBtn = new Button( "Delete" );
-	      delBtn.setMaxWidth( Double.MAX_VALUE );
-	      delBtn.setOnAction( e -> {
-	         final var del = new HashSet<StudentsModel>();
-	         for( final var StudentsModel : tbData.getItems()) {
-	            if( StudentsModel.deleteProperty().get()) {
-	               del.add( StudentsModel );
-	            }
-	         }
-	         tbData.getItems().removeAll( del ); 
-	      });
-        
-	    tbData.setEditable( true );
+
         
         tbData.setRowFactory(tv -> {
         	
@@ -84,30 +70,42 @@ public class AbscenceController implements Initializable {
             row.setOnMouseClicked(event -> {
                 if (event.getClickCount() == 2 && (! row.isEmpty()) ) {
                     StudentsModel rowData = row.getItem();
-                    System.out.println("Double click on: "+rowData.getFirstName());
+                    studentid = rowData.getStudentId();
+                    System.out.println("Double click on: "+rowData.getStudentId());
+                    
+                    
+                    URL coodiantURL = getClass().getResource("/resource/fxml/NoteEtudiant.fxml");
+            		Parent coodiantParent = null;
+					try {
+						coodiantParent = FXMLLoader.load(coodiantURL);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+            		Scene coodiantScene = new Scene(coodiantParent);
+            		Stage cooStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            		cooStage.setTitle("KonoriSys");
+            		cooStage.setResizable(false);
+            		cooStage.setScene(coodiantScene);
+            		cooStage.show();
                 }
             });
+            
             return row ;
         });
         
         
     }
+    
+    
 
     private ObservableList<StudentsModel> studentsModels = FXCollections.observableArrayList(
+    		
             new StudentsModel(1,"Imadeddine", "Alaoui Ismaili"),
             new StudentsModel(2,"Othmane", "Benchkroun"),
             new StudentsModel(3,"Othmane", "Zaim"),
-            new StudentsModel(4,"Louchkou", "Hamid"),
-            new StudentsModel(6,"Mohamed", "Bakati"),
-            new StudentsModel(7,"Mehdi", "Taxista"),
-            new StudentsModel(8,"Samir", "Statstsatsfit"),
-            new StudentsModel(9,"Samir", "SSSekkkoumi"),
-            new StudentsModel(10,"Nabil", "Taha"),
-            new StudentsModel(11,"Naoufe", "idkbro"),
-            new StudentsModel(12,"Hakima", "Se9at"),
-            new StudentsModel(13,"Adam", "Zaim"),
-            new StudentsModel(14,"Mohamed", "BOhi"),
-            new StudentsModel(15,"Mickael", "Emond")
+            new StudentsModel(8,"Louchkou", "Hamid")
+            
             
             
     );
@@ -176,12 +174,7 @@ public class AbscenceController implements Initializable {
 		cooStage.show();
     }
 
-	@FXML
-	protected void confirmer(ActionEvent e) throws Exception {
-	
-			status.setText("Informations Enregistrés");
 
-	}
     
 
 }

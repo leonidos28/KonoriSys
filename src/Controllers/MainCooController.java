@@ -53,10 +53,10 @@ public class MainCooController implements Initializable  {
 	}
 	
 	@FXML
-	protected void saisieNoteTP(ActionEvent e) throws Exception {
+	protected void listeNote(ActionEvent e) throws Exception {
 		
 		
-		URL coodiantURL = getClass().getResource("/resource/fxml/SaisieNoteTP.fxml");
+		URL coodiantURL = getClass().getResource("/resource/fxml/listeNote.fxml");
 		Parent coodiantParent = FXMLLoader.load(coodiantURL);
 		Scene coodiantScene = new Scene(coodiantParent);
 		Stage cooStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -85,7 +85,7 @@ public class MainCooController implements Initializable  {
 	@FXML
 	protected void listeEtudiant(ActionEvent e) throws Exception {
 		
-		URL profURL = getClass().getResource("/resource/fxml/listeEtudiant.fxml");
+		URL profURL = getClass().getResource("/resource/fxml/listeEtudiantCoo.fxml");
 		Parent profParent = FXMLLoader.load(profURL);
 		Scene profScene = new Scene(profParent);
 		Stage profStage = (Stage) ((Node) e.getSource()).getScene().getWindow();

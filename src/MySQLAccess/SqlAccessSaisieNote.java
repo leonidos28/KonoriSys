@@ -134,7 +134,7 @@ public class SqlAccessSaisieNote {
 			 close();
 		 }
 	}
-// You need to close the resultSet
+
 	private static void close() {
 		try {
 			if (resultSet != null) {

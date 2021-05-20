@@ -12,6 +12,8 @@ public class StudentsModel {
     private SimpleIntegerProperty studentId;
     private SimpleStringProperty firstName;
     private SimpleStringProperty lastName;
+    private SimpleStringProperty noteEcrit;
+    private SimpleStringProperty noteTP;
     
     private final StringProperty  name   = new SimpleStringProperty();
     private final BooleanProperty delete = new SimpleBooleanProperty();
@@ -28,6 +30,14 @@ public class StudentsModel {
         this.studentId = new SimpleIntegerProperty(studentId);
         this.firstName = new SimpleStringProperty(firstName);
         this.lastName = new SimpleStringProperty(lastName);
+    }
+    
+    public StudentsModel(Integer studentId, String firstName,String lastName, String noteEcrit,String noteTP) {
+        this.studentId = new SimpleIntegerProperty(studentId);
+        this.firstName = new SimpleStringProperty(firstName);
+        this.lastName = new SimpleStringProperty(lastName);
+        this.noteEcrit=new SimpleStringProperty(noteEcrit);
+        this.noteTP=new SimpleStringProperty(noteTP);
     }
 
     public int getStudentId() {
@@ -53,4 +63,22 @@ public class StudentsModel {
     public void setLastName(String lastName) {
         this.lastName = new SimpleStringProperty(lastName);
     }
+
+	public String getNoteEcrit() {
+		return noteEcrit.get();
+	}
+
+	public void setNoteEcrit(String noteEcrit) {
+		this.noteEcrit = new SimpleStringProperty(noteEcrit);
+		
+	}
+
+	public String getNoteTP() {
+		return noteTP.get();
+	}
+
+	public void setNoteTP(String noteTP) {
+		this.noteTP = new SimpleStringProperty(noteTP);
+		
+	}
 }

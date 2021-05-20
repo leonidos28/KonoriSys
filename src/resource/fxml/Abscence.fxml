@@ -69,11 +69,21 @@
             </Button>
          </children>
       </AnchorPane>
-      <Label layoutX="338.0" layoutY="32.0" text="Liste Etudiants" textFill="#9c2b27">
+      <Label layoutX="338.0" layoutY="32.0" text="Liste Absence" textFill="#9c2b27">
          <font>
             <Font name="Tw Cen MT Condensed Extra Bold" size="36.0" />
          </font>
       </Label>
       <Line endX="813.0" layoutX="422.0" layoutY="73.0" startX="-100.0" style="-fx-fill: #9C2B27;" />
+      <Button layoutX="1069.0" layoutY="95.0" mnemonicParsing="false" onAction="#confirmer" prefHeight="45.0" prefWidth="150.0" style="-fx-background-color: #9C2B27; -fx-border-color: #fff; -fx-border-radius: 5;" text="Confirmer" textFill="WHITE">
+         <font>
+            <Font name="Tw Cen MT" size="23.0" />
+         </font>
+      </Button>
+      <Label fx:id="status" alignment="CENTER" contentDisplay="CENTER" layoutX="692.0" layoutY="101.0" prefHeight="34.0" prefWidth="322.0" textFill="#9c2b27">
+         <font>
+            <Font name="Tw Cen MT" size="23.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

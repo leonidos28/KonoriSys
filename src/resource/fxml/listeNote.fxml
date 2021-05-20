@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ListeEtudiantControllerProf">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ListeNoteController">
    <children>
       <ImageView fitHeight="656.0" fitWidth="1250.0" layoutX="50.0" layoutY="213.0" opacity="0.12" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -20,10 +20,11 @@
       </ImageView>
       <TableView fx:id="tbData" layoutX="334.0" layoutY="173.0" prefHeight="442.0" prefWidth="914.0" style="-fx-border-color: #9C2B27;" stylesheets="@../css/fullpackstyling.css">
         <columns>
-            <TableColumn fx:id="loadedColumn" maxWidth="4000.0" minWidth="-1.0" prefWidth="97.0" resizable="false" text="Absence" />
           <TableColumn fx:id="studentId" minWidth="0.0" prefWidth="104.0" resizable="false" text="StudentId" />
           <TableColumn fx:id="firstName" prefWidth="202.0" text="Nom" />
             <TableColumn fx:id="lastName" prefWidth="125.0" text="Prenom" />
+            <TableColumn fx:id="noteEcrit" editable="false" prefWidth="155.0" text="Note écrit" />
+            <TableColumn fx:id="noteTP" editable="false" prefWidth="155.0" text="Note Tp" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -69,11 +70,16 @@
             </Button>
          </children>
       </AnchorPane>
-      <Label layoutX="338.0" layoutY="32.0" text="Liste Etudiants" textFill="#9c2b27">
+      <Label layoutX="338.0" layoutY="32.0" text="Liste Note" textFill="#9c2b27">
          <font>
             <Font name="Tw Cen MT Condensed Extra Bold" size="36.0" />
          </font>
       </Label>
       <Line endX="813.0" layoutX="422.0" layoutY="73.0" startX="-100.0" style="-fx-fill: #9C2B27;" />
+      <Button layoutX="1173.0" layoutY="101.0" mnemonicParsing="false" onAction="#addStudent" prefHeight="33.0" prefWidth="63.0" style="-fx-background-color: #9C2B27; -fx-border-color: #fff; -fx-border-radius: 5;" text="+" textFill="WHITE">
+         <font>
+            <Font name="Tw Cen MT" size="23.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

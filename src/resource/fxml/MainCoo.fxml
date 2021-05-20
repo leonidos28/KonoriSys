@@ -57,12 +57,12 @@
                   <Font name="Tw Cen MT" size="23.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#saisieNoteEcrit" prefHeight="88.0" prefWidth="200.0" style="-fx-background-color: #9C2B27; -fx-border-color: #fff; -fx-border-radius: 5;" text="Saisie Notes Ecrits" textFill="WHITE" GridPane.columnIndex="2">
+            <Button mnemonicParsing="false" onAction="#saisieNoteEcrit" prefHeight="88.0" prefWidth="200.0" style="-fx-background-color: #9C2B27; -fx-border-color: #fff; -fx-border-radius: 5;" text="Ajouter un Prof" textFill="WHITE" GridPane.columnIndex="2">
                <font>
                   <Font name="Tw Cen MT" size="23.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#saisieNoteTP" prefHeight="88.0" prefWidth="200.0" style="-fx-background-color: #9C2B27; -fx-border-color: #fff; -fx-border-radius: 5;" text="Saisie Notes TP" textFill="WHITE" GridPane.columnIndex="3">
+            <Button mnemonicParsing="false" onAction="#listeNote" prefHeight="88.0" prefWidth="200.0" style="-fx-background-color: #9C2B27; -fx-border-color: #fff; -fx-border-radius: 5;" text="Liste Note" textFill="WHITE" GridPane.columnIndex="3">
                <font>
                   <Font name="Tw Cen MT" size="23.0" />
                </font>
